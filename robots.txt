@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://xamined.github.io/sitemap.xml
