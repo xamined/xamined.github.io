@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Flash Crash — Sources | Engineering Disasters</title>
+<meta name="description" content="Full source citations for the Engineering Disasters episode on the 2010 Flash Crash. Official reports, court documents, academic papers, and news articles.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F8F5EF;
+    --bg-elevated: #EFEBE3;
+    --text-primary: #1A1C1A;
+    --text-secondary: #5C564D;
+    --accent-red: #B5302A;
+    --accent-blue: #2B5F85;
+    --accent-amber: #9B7A1C;
+    --rule-line: #D4CCBA;
+    --stamp-red: #8B2020;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+
+  /* Hero */
+  .hero {
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--rule-line);
+    position: relative;
+  }
+  .hero .ghost-year {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 280px;
+    font-weight: 700;
+    color: var(--text-primary);
+    opacity: 0.05;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .hero .breadcrumb {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+  .hero .breadcrumb a { color: var(--text-secondary); }
+  .hero .breadcrumb a:hover { color: var(--accent-red); }
+  .hero .case-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--accent-red);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .hero h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+  .hero .subtitle {
+    font-size: 19px;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .hero .meta-row {
+    margin-top: 20px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hero .meta-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+  }
+  .hero .meta-item span { color: var(--text-primary); }
+
+  /* Chapters */
+  .chapters {
+    padding: 36px 0;
+    border-bottom: 1px solid var(--rule-line);
+  }
+  .chapters h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+  .chapter-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 32px;
+  }
+  .chapter-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+  }
+  .chapter-list .ts {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent-red);
+    min-width: 36px;
+  }
+  .chapter-list .ch-title {
+    color: var(--text-primary);
+  }
+
+  /* Source sections */
+  .sources { padding: 40px 0; }
+  .source-section {
+    margin-bottom: 40px;
+  }
+  .source-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-red);
+    display: inline-block;
+  }
+  .source-section .section-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 6px;
+    margin-bottom: 20px;
+  }
+
+  .source-item {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule-line);
+    border-radius: 3px;
+    padding: 18px 22px;
+    margin-bottom: 10px;
+  }
+  .source-item .source-title {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .source-item .source-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .source-item .source-meta .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 2px;
+    background: rgba(181, 48, 42, 0.08);
+    color: var(--stamp-red);
+    margin-right: 6px;
+  }
+  .source-item a.source-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    word-break: break-all;
+  }
+
+  .footer {
+    border-top: 1px solid var(--rule-line);
+    padding: 30px 0 50px;
+    text-align: center;
+  }
+  .footer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 30px; }
+    .hero .ghost-year { font-size: 160px; }
+    .chapter-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="ghost-year">2010</div>
+    <div class="breadcrumb"><a href="/">Engineering Disasters</a> / Sources &middot; <a href="https://www.youtube.com/channel/UCpg-SLR0NPunRAdw3gUaTHA">YouTube</a></div>
+    <div class="case-number">Episode 02 &middot; The Flash Crash</div>
+    <h1>$1 Trillion Gone in 5 Minutes</h1>
+    <div class="subtitle">The 2010 Flash Crash. We try to include every source we used.</div>
+    <div class="meta-row">
+      <div class="meta-item">Date: <span>May 6, 2010</span></div>
+      <div class="meta-item">Duration: <span>22:07</span></div>
+      <div class="meta-item">Sources: <span>39</span></div>
+    </div>
+  </div>
+
+  <!-- Chapters -->
+  <div class="chapters">
+    <h2>Chapters</h2>
+    <ul class="chapter-list">
+      <li><span class="ts">0:15</span><span class="ch-title">One Penny</span></li>
+      <li><span class="ts">1:42</span><span class="ch-title">Dry Kindling</span></li>
+      <li><span class="ts">3:38</span><span class="ch-title">The Algorithm</span></li>
+      <li><span class="ts">5:29</span><span class="ch-title">Hot Potato</span></li>
+      <li><span class="ts">8:17</span><span class="ch-title">Five Seconds</span></li>
+      <li><span class="ts">10:02</span><span class="ch-title">The Broken Trades</span></li>
+      <li><span class="ts">11:55</span><span class="ch-title">The Hound of Hounslow</span></li>
+      <li><span class="ts">17:23</span><span class="ch-title">Nobody Was in Charge</span></li>
+      <li><span class="ts">20:10</span><span class="ch-title">Points, Not Money</span></li>
+    </ul>
+  </div>
+
+  <!-- Sources -->
+  <div class="sources">
+
+    <!-- Official Reports -->
+    <div class="source-section">
+      <h2>Official Reports</h2>
+      <div class="section-desc">Government investigations and regulatory filings.</div>
+
+      <div class="source-item">
+        <div class="source-title">Findings Regarding the Market Events of May 6, 2010</div>
+        <div class="source-meta">
+          <span class="tag">SEC/CFTC</span> September 30, 2010 &middot; 104 pages &middot; Lead investigator: Gregg E. Berman
+        </div>
+        <a class="source-link" href="https://www.sec.gov/files/marketevents-report.pdf">sec.gov/files/marketevents-report.pdf</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Preliminary Findings Regarding the Market Events of May 6, 2010</div>
+        <div class="source-meta">
+          <span class="tag">SEC/CFTC</span> May 18, 2010
+        </div>
+        <a class="source-link" href="https://www.sec.gov/sec-cftc-prelimreport.pdf">sec.gov/sec-cftc-prelimreport.pdf</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Joint CFTC-SEC Advisory Committee Summary Report</div>
+        <div class="source-meta">
+          <span class="tag">SEC/CFTC</span> February 18, 2011
+        </div>
+        <a class="source-link" href="https://www.sec.gov/spotlight/sec-cftcjointcommittee/021811-report.pdf">sec.gov/spotlight/sec-cftcjointcommittee/021811-report.pdf</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Flash Crash Impact of High Frequency Trading</div>
+        <div class="source-meta">
+          <span class="tag">CFTC</span> Working Paper &middot; March 2014
+        </div>
+        <a class="source-link" href="https://www.cftc.gov/sites/default/files/idc/groups/public/@economicanalysis/documents/file/oce_flashcrash0314.pdf">cftc.gov &middot; oce_flashcrash0314.pdf</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 747</div>
+        <div class="source-meta">
+          <span class="tag">US LAW</span> 2010 &middot; Criminalized spoofing in commodity markets
+        </div>
+      </div>
+    </div>
+
+    <!-- Court Documents -->
+    <div class="source-section">
+      <h2>Court Documents</h2>
+      <div class="section-desc">Civil and criminal proceedings against Navinder Singh Sarao.</div>
+
+      <div class="source-item">
+        <div class="source-title">CFTC v. Navinder Singh Sarao &mdash; Civil Complaint</div>
+        <div class="source-meta">
+          <span class="tag">CFTC</span> Filed April 17, 2015 &middot; U.S. District Court, Northern District of Illinois
+        </div>
+        <a class="source-link" href="https://www.cftc.gov/sites/default/files/idc/groups/public/@lrenforcementactions/documents/legalpleading/enfsaraocomplaint041715.pdf">cftc.gov &middot; enfsaraocomplaint041715.pdf</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">United States v. Navinder Singh Sarao &mdash; Criminal Case</div>
+        <div class="source-meta">
+          <span class="tag">DOJ</span> Complaint: Feb 2015 &middot; Indictment: Sep 2015 (22 counts) &middot; Guilty plea: Nov 9, 2016 &middot; Sentencing: Jan 28, 2020
+        </div>
+        <a class="source-link" href="https://www.justice.gov/criminal/criminal-vns/united-states-v-navinder-singh-sarao">justice.gov &middot; united-states-v-navinder-singh-sarao</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">DOJ Sentencing Memorandum</div>
+        <div class="source-meta">
+          <span class="tag">DOJ</span> January 2020 &middot; Judge Virginia M. Kendall &middot; Sentence: 1 year home detention
+        </div>
+        <a class="source-link" href="https://business.cch.com/srd/USvSarao_sentencingmemo.pdf">business.cch.com &middot; USvSarao_sentencingmemo.pdf</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">CFTC Civil Sanctions Order</div>
+        <div class="source-meta">
+          <span class="tag">CFTC</span> November 2016 &middot; $38M+ in monetary sanctions
+        </div>
+        <a class="source-link" href="https://www.cftc.gov/PressRoom/PressReleases/7486-16">cftc.gov/PressRoom/PressReleases/7486-16</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Simon Baron-Cohen Autism Evaluation</div>
+        <div class="source-meta">
+          <span class="tag">EXPERT</span> Filed with DOJ sentencing &middot; Cambridge University psychologist
+        </div>
+      </div>
+    </div>
+
+    <!-- Academic -->
+    <div class="source-section">
+      <h2>Academic Papers</h2>
+
+      <div class="source-item">
+        <div class="source-title">The Flash Crash: High-Frequency Trading in an Electronic Market</div>
+        <div class="source-meta">
+          <span class="tag">JOURNAL OF FINANCE</span> Kirilenko, Kyle, Samadi, Tuzun &middot; 2017 (CFTC working paper: 2010)
+        </div>
+        <a class="source-link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1686004">ssrn.com &middot; abstract_id=1686004</a>
+      </div>
+    </div>
+
+    <!-- Books -->
+    <div class="source-section">
+      <h2>Books</h2>
+
+      <div class="source-item">
+        <div class="source-title">Flash Crash: A Trading Savant, a Global Manhunt, and the Most Mysterious Market Crash in History</div>
+        <div class="source-meta">
+          <span class="tag">BOOK</span> Liam Vaughan &middot; Doubleday, 2020 &middot; Film rights: See-Saw Films (Dev Patel attached)
+        </div>
+      </div>
+    </div>
+
+    <!-- News -->
+    <div class="source-section">
+      <h2>News &amp; Reporting</h2>
+      <div class="section-desc">Journalism that informed the narrative.</div>
+
+      <div class="source-item">
+        <div class="source-title">How the Flash Crash Trader's $50 Million Fortune Vanished</div>
+        <div class="source-meta"><span class="tag">BLOOMBERG</span> February 2017</div>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Waddell & Reed responds to 'flash crash' reports</div>
+        <div class="source-meta"><span class="tag">CNN MONEY</span> May 14, 2010</div>
+        <a class="source-link" href="https://money.cnn.com/2010/05/14/markets/flash_crash_waddell_reed/">money.cnn.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">P&G Stock Drops 37%</div>
+        <div class="source-meta"><span class="tag">CNN MONEY</span> May 6, 2010</div>
+        <a class="source-link" href="https://money.cnn.com/2010/05/06/markets/procter_and_gamble_stock/">money.cnn.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">'Flash crash' trader Navinder Singh Sarao sentenced to home detention</div>
+        <div class="source-meta"><span class="tag">CNBC</span> January 29, 2020</div>
+        <a class="source-link" href="https://www.cnbc.com/2020/01/29/flash-crash-trader-navinder-singh-sarao-sentenced-to-home-detention.html">cnbc.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">CME Reprimanded Flash Crash Trader Before 2010</div>
+        <div class="source-meta"><span class="tag">CRAIN'S CHICAGO</span> April 22, 2015</div>
+        <a class="source-link" href="https://www.chicagobusiness.com/article/20150422/NEWS01/150429897">chicagobusiness.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Reliving the 2010 Flash Crash with a Veteran Floor Trader</div>
+        <div class="source-meta"><span class="tag">STOCKTWITS</span> Danny Riley interview</div>
+        <a class="source-link" href="https://medium.com/@StockTwits/reliving-the-2010-flash-crash-with-a-veteran-floor-trader-8c99adf4fd00">medium.com/@StockTwits</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">The Flash Crash, Explained</div>
+        <div class="source-meta"><span class="tag">NPR</span> Planet Money &middot; October 1, 2010</div>
+        <a class="source-link" href="https://www.npr.org/sections/money/2010/10/01/130272516/the-flash-crash-explained">npr.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Accenture CFO on Flash Crash: 'This Can Happen Again'</div>
+        <div class="source-meta"><span class="tag">FINANCIAL PLANNING</span></div>
+        <a class="source-link" href="https://www.financial-planning.com/news/accenture-cfo-on-flash-crash-this-can-happen-again">financial-planning.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">P&G Still Has Flash Crash Scar Five Years Later</div>
+        <div class="source-meta"><span class="tag">THESTREET</span> 2015</div>
+        <a class="source-link" href="https://www.thestreet.com/opinion/procter-gamble-still-has-flash-crash-scar-five-years-later-13141045">thestreet.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Hound of Hounslow Spared Prison</div>
+        <div class="source-meta"><span class="tag">ITV NEWS</span> January 29, 2020</div>
+        <a class="source-link" href="https://www.itv.com/news/2020-01-29/british-futures-trader-who-triggered-us-stock-market-crash-spared-prison">itv.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Autistic futures trader who triggered crash spared prison</div>
+        <div class="source-meta"><span class="tag">WASHINGTON TIMES</span> January 28, 2020</div>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Great Frauds in History: The Hound of Hounslow</div>
+        <div class="source-meta"><span class="tag">MONEYWEEK</span></div>
+      </div>
+    </div>
+
+    <!-- Reference -->
+    <div class="source-section">
+      <h2>Additional References</h2>
+
+      <div class="source-item">
+        <div class="source-title">The Flash Crash, Two Years On</div>
+        <div class="source-meta"><span class="tag">NY FED</span> Liberty Street Economics &middot; May 2012</div>
+        <a class="source-link" href="https://libertystreeteconomics.newyorkfed.org/2012/05/the-flash-crash-two-years-on/">newyorkfed.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">10th Flash Crash Anniversary</div>
+        <div class="source-meta"><span class="tag">SIFMA</span></div>
+        <a class="source-link" href="https://www.sifma.org/research/insights/10th-flash-crash-anniversary">sifma.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">U.S. v. Sarao: The Flash Crash and a New Effort to Prosecute Market Manipulation</div>
+        <div class="source-meta"><span class="tag">GEORGETOWN LAW</span> Technology Review</div>
+        <a class="source-link" href="https://georgetownlawtechreview.org/u-s-v-sarao-the-flash-crash-and-a-new-effort-to-prosecute-market-manipulation-and-deceptive-trading-practices/GLTR-04-2017/">georgetownlawtechreview.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Sarao's Autism at Heart of No-Jailtime Sentence</div>
+        <div class="source-meta"><span class="tag">WOLTERS KLUWER</span> Securities Regulation Daily</div>
+        <a class="source-link" href="https://lrus.wolterskluwer.com/news/securities-regulation-daily/sarao-s-autism-at-the-heart-of-receiving-no-jailtime-sentence/105007/">wolterskluwer.com</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>We try to include every source we used.<br>
+    <a href="/">Engineering Disasters</a> &middot; <a href="https://www.youtube.com/channel/UCpg-SLR0NPunRAdw3gUaTHA">YouTube</a></p>
+  </div>
+
+</div>
+</body>
+</html>

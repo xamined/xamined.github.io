@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xamined — Sources</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Serif+4:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F8F5EF;
+    --bg-elevated: #EFEBE3;
+    --text-primary: #1A1C1A;
+    --text-secondary: #5C564D;
+    --accent-red: #B5302A;
+    --accent-blue: #2B5F85;
+    --accent-amber: #9B7A1C;
+    --rule-line: #D4CCBA;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .header {
+    border-bottom: 1px solid var(--rule-line);
+    padding: 40px 0 30px;
+    text-align: center;
+  }
+  .header .channel {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+
+  .episode-list {
+    padding: 50px 0;
+  }
+  .episode-card {
+    display: block;
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule-line);
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+  .episode-card:hover {
+    border-color: var(--accent-red);
+    text-decoration: none;
+  }
+  .episode-card .ep-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--accent-red);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .episode-card .ep-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .episode-card .ep-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .footer {
+    border-top: 1px solid var(--rule-line);
+    padding: 30px 0;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="https://www.youtube.com/@Xamined" style="text-decoration:none;display:inline-block;margin-bottom:12px;">
+        <img src="/favicon.svg" alt="Xamined" width="48" height="48" style="border-radius:10px;">
+      </a>
+      <div><a href="https://www.youtube.com/@Xamined" class="channel" style="text-decoration:none;color:var(--text-secondary)">Xamined</a></div>
+      <h1>Sources & Citations</h1>
+    </div>
+
+    <div class="episode-list">
+      <a href="/ai-hidden-cost" class="episode-card">
+        <div class="ep-label">Xamined #2</div>
+        <div class="ep-title">AI Is Quietly Adding $27 to Your Electric Bill</div>
+        <div class="ep-desc">Sixty-five million people across 13 states are paying more for electricity because of data centers. Per-state data, sources, and regulatory filings.</div>
+      </a>
+
+      <a href="/cloudflare-regex" class="episode-card">
+        <div class="ep-label">Xamined #1</div>
+        <div class="ep-title">One Regex Took Down Half the Internet for 27 Minutes</div>
+        <div class="ep-desc">On July 2, 2019, a single regex pattern in Cloudflare's WAF caused catastrophic backtracking across their edge network. 502 errors, a locked-out dashboard, and a full engine rewrite in Rust.</div>
+      </a>
+
+      <a href="/flash-crash" class="episode-card">
+        <div class="ep-label">Episode 02 &middot; May 6, 2010</div>
+        <div class="ep-title">The Flash Crash</div>
+        <div class="ep-desc">$1 trillion vanished in five minutes. It took a decade to find out why. 39 sources cited.</div>
+      </a>
+
+    </div>
+
+    <div class="footer">
+      We try to cite every source we use. Links may go stale — titles and publications should help you find them.<br>
+      <a href="https://www.youtube.com/@Xamined" style="font-size:13px;font-family:'Inter',sans-serif;">Subscribe on YouTube</a>
+    </div>
+  </div>
+</body>
+</html>

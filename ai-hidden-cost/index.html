@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How AI Quietly Raised Your Electric Bill | Sources | Xamined</title>
+<meta name="description" content="Per-state electricity bill impact data, source citations, and regulatory filings for the Xamined episode on how data centers are raising electricity bills across 13 states.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "AI Is Quietly Adding $27 to Your Electric Bill",
+  "description": "AI data centers are driving electricity prices up across 13 US states. The cost is landing on residential ratepayers who never opted in. We trace how $500 billion in corporate AI spending produces near-zero productivity gains while adding $10-28/month to household electric bills through capacity market mechanisms.",
+  "thumbnailUrl": "https://img.youtube.com/vi/lQ5I6qrtS1c/maxresdefault.jpg",
+  "uploadDate": "2026-06-29",
+  "duration": "PT8M32S",
+  "contentUrl": "https://www.youtube.com/watch?v=lQ5I6qrtS1c",
+  "embedUrl": "https://www.youtube.com/embed/lQ5I6qrtS1c",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://www.youtube.com/watch?v=lQ5I6qrtS1c&t={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F8F5EF;
+    --bg-elevated: #EFEBE3;
+    --text-primary: #1A1C1A;
+    --text-secondary: #5C564D;
+    --accent-red: #B5302A;
+    --accent-blue: #2B5F85;
+    --accent-amber: #9B7A1C;
+    --rule-line: #D4CCBA;
+    --stamp-red: #8B2020;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+
+  /* Hero */
+  .hero {
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--rule-line);
+    text-align: center;
+  }
+  .hero .logo-link {
+    display: inline-block;
+    margin-bottom: 12px;
+    text-decoration: none;
+  }
+  .hero .channel {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+  .hero .channel a { color: var(--text-secondary); text-decoration: none; }
+  .hero .channel a:hover { color: var(--accent-red); }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .hero .subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .hero .breadcrumb {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 18px;
+  }
+  .hero .breadcrumb a { color: var(--text-secondary); }
+  .hero .breadcrumb a:hover { color: var(--accent-red); text-decoration: underline; }
+
+  /* Section headings */
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-red);
+    display: inline-block;
+  }
+  .section-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-top: 6px;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* Key stats strip */
+  .key-stats {
+    padding: 36px 0;
+    border-bottom: 1px solid var(--rule-line);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .stat-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule-line);
+    border-radius: 4px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .stat-card .stat-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--accent-red);
+    line-height: 1.2;
+  }
+  .stat-card .stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 6px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+  }
+
+  /* Auction history */
+  .auction-section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--rule-line);
+  }
+
+  /* Tables */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    margin-top: 8px;
+  }
+  .data-table thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--rule-line);
+    white-space: nowrap;
+  }
+  .data-table tbody td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--rule-line);
+    vertical-align: top;
+  }
+  .data-table tbody tr:last-child td { border-bottom: none; }
+  .data-table tbody tr:hover { background: rgba(0,0,0,0.02); }
+  .data-table .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .data-table .increase { color: var(--accent-red); }
+  .data-table .label-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .data-table .highlight-row td {
+    background: rgba(181, 48, 42, 0.04);
+  }
+
+  /* State impacts */
+  .state-section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--rule-line);
+  }
+  .state-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule-line);
+    border-radius: 4px;
+  }
+  .state-note strong { color: var(--text-primary); }
+
+  /* Sources */
+  .sources-section {
+    padding: 40px 0;
+  }
+  .source-group {
+    margin-bottom: 36px;
+  }
+  .source-group h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-red);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule-line);
+  }
+  .source-item {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule-line);
+    border-radius: 3px;
+    padding: 14px 18px;
+    margin-bottom: 8px;
+  }
+  .source-item .source-title {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+  }
+  .source-item .source-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .source-item .source-meta .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 2px 7px;
+    border-radius: 2px;
+    background: rgba(181, 48, 42, 0.08);
+    color: var(--stamp-red);
+    margin-right: 5px;
+  }
+  .source-item a.source-link {
+    display: inline-block;
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    word-break: break-all;
+  }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid var(--rule-line);
+    padding: 30px 0 50px;
+    text-align: center;
+  }
+  .footer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 28px; }
+    .data-table { font-size: 13px; }
+    .data-table thead th { font-size: 10px; padding: 8px 10px; }
+    .data-table tbody td { padding: 10px; }
+    .container { padding: 0 20px; }
+  }
+  @media (max-width: 500px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stat-card .stat-number { font-size: 22px; }
+    .hero h1 { font-size: 24px; }
+    .data-table { display: block; overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <a href="https://www.youtube.com/@Xamined" class="logo-link">
+      <img src="/favicon.svg" alt="Xamined" width="48" height="48" style="border-radius:10px;">
+    </a>
+    <div class="channel"><a href="https://www.youtube.com/@Xamined">Xamined</a></div>
+    <h1>How AI Quietly Raised Your Electric Bill</h1>
+    <div class="subtitle">Sources, citations, and per-state electricity data.</div>
+    <div class="breadcrumb"><a href="/">All Episodes</a> / Sources</div>
+  </div>
+
+  <!-- Video Embed -->
+  <div style="padding:40px 0 0;text-align:center;">
+    <div style="position:relative;width:100%;max-width:720px;margin:0 auto;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,0.12);">
+      <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" src="https://www.youtube.com/embed/lQ5I6qrtS1c" title="AI Is Quietly Adding $27 to Your Electric Bill" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Key Stats -->
+  <div class="key-stats">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">63%</div>
+        <div class="stat-label">of cost increase from data centers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">$9.3B</div>
+        <div class="stat-label">passed to ratepayers (2025/26)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">13</div>
+        <div class="stat-label">states + DC affected</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">833%</div>
+        <div class="stat-label">capacity price increase</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PJM Auction History -->
+  <div class="auction-section">
+    <h2 class="section-heading">PJM Capacity Auction History</h2>
+    <div class="section-desc">PJM Interconnection runs the wholesale electricity market for 13 states and DC, serving 65 million people. These are the base residual auction clearing prices that determine what utilities pay for future generating capacity.</div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Delivery Year</th>
+          <th>Clearing Price</th>
+          <th>Total Cost</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">2024/2025</td>
+          <td><span class="mono">$28.92</span>/MW-day <span class="label-text">(RTO)</span></td>
+          <td class="mono">$2.2B</td>
+          <td class="label-text">Baseline</td>
+        </tr>
+        <tr class="highlight-row">
+          <td class="mono">2025/2026</td>
+          <td><span class="mono increase">$269.92</span>/MW-day <span class="label-text">(RTO); BGE: $466; DOM: $444</span></td>
+          <td class="mono increase">$14.7B</td>
+          <td class="mono increase">+833%</td>
+        </tr>
+        <tr class="highlight-row">
+          <td class="mono">2026/2027</td>
+          <td><span class="mono increase">$329.17</span>/MW-day <span class="label-text">(price cap hit)</span></td>
+          <td class="mono increase">$16.1B</td>
+          <td class="mono increase">+22%</td>
+        </tr>
+        <tr class="highlight-row">
+          <td class="mono">2027/2028</td>
+          <td><span class="mono increase">$333.44</span>/MW-day <span class="label-text">(price cap, 6,625 MW shortfall)</span></td>
+          <td class="mono increase">~$16.4B</td>
+          <td class="label-text">First-ever capacity shortfall</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="state-note">
+      <strong>Data center attribution:</strong> PJM's Independent Market Monitor attributes 63% ($9.3B) of the 2025/2026 cost increase to data center demand. CUB (Illinois) independently estimated 70%. Across three auction cycles, data centers account for 45% ($21.3B of $47.2B) of total capacity costs. Data centers drive 94-97% of all new demand in PJM's load growth forecast.
+    </div>
+  </div>
+
+  <!-- Per-State Impacts -->
+  <div class="state-section">
+    <h2 class="section-heading">Per-State Monthly Bill Increases</h2>
+    <div class="section-desc">Residential electricity bill increases from the 2025/2026 delivery year PJM capacity auction. Figures represent monthly increases to average household bills.</div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>State / Zone</th>
+          <th>Monthly Increase</th>
+          <th>% Change</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>New Jersey</strong>,Atlantic City Electric</td>
+          <td class="mono increase">+$28.02/mo</td>
+          <td class="mono">17.2%</td>
+          <td class="label-text">NJ BPU</td>
+        </tr>
+        <tr>
+          <td><strong>Indiana</strong>,statewide average</td>
+          <td class="mono increase">+$28.00/mo</td>
+          <td class="mono">17.5%</td>
+          <td class="label-text">Indiana Capital Chronicle</td>
+        </tr>
+        <tr>
+          <td><strong>New Jersey</strong>,PSE&G</td>
+          <td class="mono increase">+$26.87/mo</td>
+          <td class="mono">17.2%</td>
+          <td class="label-text">NJ BPU</td>
+        </tr>
+        <tr>
+          <td><strong>New Jersey</strong>,JCP&L</td>
+          <td class="mono increase">+$22.67/mo</td>
+          <td class="mono">20.2%</td>
+          <td class="label-text">NJ BPU</td>
+        </tr>
+        <tr>
+          <td><strong>Maryland</strong>,BGE (Baltimore, $466/MW-day)</td>
+          <td class="mono increase">+$21.00/mo</td>
+          <td class="mono">19%</td>
+          <td class="label-text">Maryland OPC</td>
+        </tr>
+        <tr>
+          <td><strong>Maryland</strong>,Pepco MD</td>
+          <td class="mono increase">+$21.00/mo</td>
+          <td class="mono">10%</td>
+          <td class="label-text">Maryland OPC</td>
+        </tr>
+        <tr>
+          <td><strong>Washington, DC</strong>,Pepco DC</td>
+          <td class="mono increase">+$20.81/mo</td>
+          <td class="mono">17.7%</td>
+          <td class="label-text">DC OPC</td>
+        </tr>
+        <tr>
+          <td><strong>Maryland</strong>,Potomac Edison/APS</td>
+          <td class="mono increase">+$18.00/mo</td>
+          <td class="mono">24%</td>
+          <td class="label-text">Maryland OPC</td>
+        </tr>
+        <tr>
+          <td><strong>Ohio</strong>,AEP Ohio (supply rate +43.7%)</td>
+          <td class="mono increase">+$16.00/mo</td>
+          <td class="mono">10-15%</td>
+          <td class="label-text">Ohio Capital Journal</td>
+        </tr>
+        <tr>
+          <td><strong>Michigan</strong>,PJM portion (AEP/I&M only)</td>
+          <td class="mono increase">+$15.00/mo</td>
+          <td class="mono">pending</td>
+          <td class="label-text">AEP/I&M rate cases</td>
+        </tr>
+        <tr>
+          <td><strong>Delaware</strong>,Delmarva Power</td>
+          <td class="mono increase">+$14.64/mo</td>
+          <td class="mono">9%</td>
+          <td class="label-text">Delaware.gov</td>
+        </tr>
+        <tr>
+          <td><strong>Pennsylvania</strong>,statewide aggregate</td>
+          <td class="mono increase">+$10-20/mo</td>
+          <td class="mono">10-20%</td>
+          <td class="label-text">Duquesne Light / PA OCA</td>
+        </tr>
+        <tr>
+          <td><strong>Virginia</strong>,Dominion zone ($444/MW-day)</td>
+          <td class="mono increase">+$11.24/mo</td>
+          <td class="mono">38% over 4 yr</td>
+          <td class="label-text">Virginia SCC</td>
+        </tr>
+        <tr>
+          <td><strong>Illinois</strong>,ComEd</td>
+          <td class="mono increase">+$10.60/mo</td>
+          <td class="mono">10-15%</td>
+          <td class="label-text">Citizens Utility Board</td>
+        </tr>
+        <tr>
+          <td><strong>West Virginia</strong>,APS zone</td>
+          <td class="mono increase">+$10-15/mo</td>
+          <td class="mono">~12%</td>
+          <td class="label-text">Rate case filings</td>
+        </tr>
+        <tr>
+          <td><strong>Maryland</strong>,Delmarva South</td>
+          <td class="mono increase">+$10.00/mo</td>
+          <td class="mono">2%</td>
+          <td class="label-text">Maryland OPC</td>
+        </tr>
+        <tr>
+          <td><strong>Kentucky</strong>,Kentucky Power/AEP</td>
+          <td class="mono increase">+$10-15/mo</td>
+          <td class="mono">est.</td>
+          <td class="label-text">Utility Dive</td>
+        </tr>
+        <tr>
+          <td><strong>North Carolina</strong>,Dominion zone (NE NC only)</td>
+          <td class="mono increase">+$11-15/mo</td>
+          <td class="mono">est.</td>
+          <td class="label-text">Dominion zone data</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="state-note">
+      <strong>Virginia rate disparity:</strong> Residential customers pay ~17.5 c/kWh while data centers pay ~8.5 c/kWh (2:1 disparity). The Dominion zone cleared at $444.26/MW-day, 65% higher than the rest of PJM, driven by Northern Virginia's status as the world's largest data center market. The Virginia SCC approved a new data center rate class starting January 2027.
+    </div>
+
+    <div class="state-note" style="margin-top: 10px;">
+      <strong>PJM-wide average:</strong> Across ~27 million households, the average incremental capacity cost is ~$38-40/month. Long-term projection: $70/month by 2028 (Introl); $163B from 2028-2033 if the price cap expires (NRDC).
+    </div>
+  </div>
+
+  <!-- All Sources Cited -->
+  <div class="sources-section">
+    <h2 class="section-heading">All Sources Cited</h2>
+    <div class="section-desc">Every source referenced in the episode, grouped by topic.</div>
+
+    <!-- Uber / Corporate AI Spending -->
+    <div class="source-group">
+      <h3>Uber &amp; Corporate AI Spending</h3>
+
+      <div class="source-item">
+        <div class="source-title">Uber COO on AI spending, tokens, Claude Code</div>
+        <div class="source-meta"><span class="tag">FORTUNE</span> May 26, 2026</div>
+        <a class="source-link" href="https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/">fortune.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Uber caps employee AI spending after blowing through budget in four months</div>
+        <div class="source-meta"><span class="tag">TECHCRUNCH</span> June 2, 2026</div>
+        <a class="source-link" href="https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/">techcrunch.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Uber caps usage of AI tools like Claude Code to cut costs</div>
+        <div class="source-meta"><span class="tag">BLOOMBERG</span> June 2, 2026</div>
+        <a class="source-link" href="https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs">bloomberg.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Uber CTO shows Claude Code can blow AI budgets</div>
+        <div class="source-meta"><span class="tag">THE INFORMATION</span> April 2026</div>
+        <a class="source-link" href="https://www.theinformation.com/newsletters/applied-ai/uber-cto-shows-claude-code-can-blow-ai-budgets">theinformation.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Uber introduces $1,500 monthly cap on AI coding tools after budget blowout</div>
+        <div class="source-meta"><span class="tag">ZEROHEDGE</span></div>
+        <a class="source-link" href="https://www.zerohedge.com/ai/uber-introduces-1500-monthly-cap-ai-coding-tools-after-budget-blowout">zerohedge.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">AI sticker shock: enterprise spending spirals</div>
+        <div class="source-meta"><span class="tag">AXIOS</span> May 28, 2026</div>
+        <a class="source-link" href="https://www.axios.com/2026/05/28/ai-spending-roi-enterprise-costs">axios.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Anthropic faces spending backlash</div>
+        <div class="source-meta"><span class="tag">AXIOS</span> June 2, 2026</div>
+        <a class="source-link" href="https://www.axios.com/2026/06/02/anthropic-ipo-ai-sticker-shock-spending-usage">axios.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Amazon, Walmart, Uber curb AI use over costs</div>
+        <div class="source-meta"><span class="tag">CRYPTOBRIEFING</span></div>
+        <a class="source-link" href="https://cryptobriefing.com/companies-rein-in-ai-usage-costs/">cryptobriefing.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Amazon, Walmart, Meta move to cap AI usage</div>
+        <div class="source-meta"><span class="tag">DIGITALTODAY</span></div>
+        <a class="source-link" href="https://www.digitaltoday.co.kr/en/view/72499/ai-costs-hit-home-amazon-walmart-meta-move-to-cap-usage">digitaltoday.co.kr</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Mystery company blew $500M on Claude in a single month</div>
+        <div class="source-meta"><span class="tag">TOM'S HARDWARE</span></div>
+        <a class="source-link" href="https://www.tomshardware.com/tech-industry/artificial-intelligence/mystery-company-accidentally-blew-usd500-million-on-claude-in-a-single-month-failed-to-put-usage-limit-on-licenses-for-employees">tomshardware.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Microsoft canceled most Claude Code licenses in Experiences &amp; Devices division</div>
+        <div class="source-meta"><span class="tag">THE VERGE</span> June 2026</div>
+      </div>
+    </div>
+
+    <!-- Productivity Studies -->
+    <div class="source-group">
+      <h3>Productivity Studies</h3>
+
+      <div class="source-item">
+        <div class="source-title">Firm Data on AI (Working Paper w34836)</div>
+        <div class="source-meta"><span class="tag">NBER</span> Yotzov, Barrero, Bloom et al. &middot; 6,000 executives across US, UK, Germany, Australia &middot; 89% reported no impact on labor productivity</div>
+        <a class="source-link" href="https://www.nber.org/papers/w34836">nber.org/papers/w34836</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">NBER Working Paper w34836 (PDF)</div>
+        <div class="source-meta"><span class="tag">NBER</span> Full paper</div>
+        <a class="source-link" href="https://www.nber.org/system/files/working_papers/w34836/w34836.pdf">nber.org (PDF)</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">AI productivity survey coverage</div>
+        <div class="source-meta"><span class="tag">THE REGISTER</span> February 18, 2026</div>
+        <a class="source-link" href="https://www.theregister.com/2026/02/18/ai_productivity_survey/">theregister.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Global Evidence on Business Use of AI (Digest summary)</div>
+        <div class="source-meta"><span class="tag">NBER</span> May 2026</div>
+        <a class="source-link" href="https://www.nber.org/digest/202605/global-evidence-business-use-ai">nber.org/digest</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">29th Global CEO Survey</div>
+        <div class="source-meta"><span class="tag">PWC</span> 4,454 CEOs across 95 countries &middot; 56% reported neither revenue increases nor cost decreases from AI</div>
+        <a class="source-link" href="https://www.pwc.com/gx/en/issues/c-suite-insights/ceo-survey.html">pwc.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">PwC 2026 CEO Survey (PDF)</div>
+        <div class="source-meta"><span class="tag">PWC</span> Full report</div>
+        <a class="source-link" href="https://www.pwc.com/gx/en/ceo-survey/2026/pwc-ceo-survey-2026.pdf">pwc.com (PDF)</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">The GenAI Divide: State of AI in Business 2025</div>
+        <div class="source-meta"><span class="tag">MIT NANDA</span> 95% of AI pilots delivered no measurable P&L impact</div>
+        <a class="source-link" href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/">fortune.com (coverage)</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">MIT NANDA Report (PDF)</div>
+        <div class="source-meta"><span class="tag">MIT</span></div>
+        <a class="source-link" href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf">mlq.ai (PDF)</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">GenAI shows rapid growth but yields mixed results</div>
+        <div class="source-meta"><span class="tag">S&P GLOBAL</span> 42% abandoned majority of AI initiatives before production (up from 17%)</div>
+        <a class="source-link" href="https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/10/generative-ai-shows-rapid-growth-but-yields-mixed-results">spglobal.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">AI rapid adoption but mixed outcomes</div>
+        <div class="source-meta"><span class="tag">S&P GLOBAL</span></div>
+        <a class="source-link" href="https://www.spglobal.com/market-intelligence/en/news-insights/research/ai-experiences-rapid-adoption-but-with-mixed-outcomes-highlights-from-vote-ai-machine-learning">spglobal.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">"You can see the computer age everywhere but in the productivity statistics"</div>
+        <div class="source-meta"><span class="tag">SOLOW 1987</span> NYT Book Review, July 12, 1987 &middot; Productivity gains visible ~1995-2000</div>
+        <a class="source-link" href="https://standupeconomist.com/solows-computer-age-quote-a-definitive-citation/">standupeconomist.com</a>
+      </div>
+    </div>
+
+    <!-- PJM / Energy -->
+    <div class="source-group">
+      <h3>PJM Capacity Market &amp; Energy Costs</h3>
+
+      <div class="source-item">
+        <div class="source-title">Projected data center growth spurs PJM capacity prices by factor of 10</div>
+        <div class="source-meta"><span class="tag">IEEFA</span></div>
+        <a class="source-link" href="https://ieefa.org/resources/projected-data-center-growth-spurs-pjm-capacity-prices-factor-10">ieefa.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">PJM 2025/2026 Base Residual Auction Report (PDF)</div>
+        <div class="source-meta"><span class="tag">PJM</span></div>
+        <a class="source-link" href="https://www.pjm.com/-/media/DotCom/markets-ops/rpm/rpm-auction-info/2025-2026/2025-2026-base-residual-auction-report.pdf">pjm.com (PDF)</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">PJM 2026/2027 Base Residual Auction Report (PDF)</div>
+        <div class="source-meta"><span class="tag">PJM</span></div>
+        <a class="source-link" href="https://www.pjm.com/-/media/DotCom/markets-ops/rpm/rpm-auction-info/2026-2027/2026-2027-bra-report.pdf">pjm.com (PDF)</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">PJM capacity prices hit price cap</div>
+        <div class="source-meta"><span class="tag">RTO INSIDER</span></div>
+        <a class="source-link" href="https://www.rtoinsider.com/110662-pjm-capacity-prices-hit-price-cap/">rtoinsider.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">PJM interconnection capacity auction prices hit record</div>
+        <div class="source-meta"><span class="tag">UTILITY DIVE</span></div>
+        <a class="source-link" href="https://www.utilitydive.com/news/pjm-interconnection-capacity-auction-prices/753798/">utilitydive.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Data centers account for 40%+ of PJM capacity costs</div>
+        <div class="source-meta"><span class="tag">UTILITY DIVE</span></div>
+        <a class="source-link" href="https://www.utilitydive.com/news/data-centers-pjm-capacity-auction/808951/">utilitydive.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Dominion Energy Virginia proposes new rates</div>
+        <div class="source-meta"><span class="tag">DOMINION</span> First base rate increase since 1992</div>
+        <a class="source-link" href="https://news.dominionenergy.com/press-releases/press-releases/2025/Dominion-Energy-Virginia-proposes-new-rates-to-continue-delivering-reliable-service-and-increasingly-clean-energy/default.aspx">dominionenergy.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Dominion Energy rate hike, fuel costs, data centers</div>
+        <div class="source-meta"><span class="tag">VPM</span></div>
+        <a class="source-link" href="https://www.vpm.org/news/2025-04-04/dominion-energy-rate-hike-scc-fuel-costs-inflation-data-centers">vpm.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Electricity price data center AI inflation</div>
+        <div class="source-meta"><span class="tag">CNBC</span> Goldman Sachs: +0.1% to core inflation in 2026-2027</div>
+        <a class="source-link" href="https://www.cnbc.com/2026/02/12/electricity-price-data-center-ai-inflation-goldman.html">cnbc.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Middle class paying for data center AI boom through higher electric bills</div>
+        <div class="source-meta"><span class="tag">FORTUNE</span></div>
+        <a class="source-link" href="https://fortune.com/2026/02/13/middle-class-americans-paying-for-data-center-ai-boom-higher-electric-bills-food-costs-goldman-sachs/">fortune.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Goldman Sachs Research: electricity and AI inflation</div>
+        <div class="source-meta"><span class="tag">GOLDMAN SACHS</span> February 2026</div>
+        <a class="source-link" href="https://www.gspublishing.com/content/research/en/reports/2026/02/11/cefdda9f-3b7c-4a53-9950-dfcfa3c6bbc2.html">gspublishing.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Virginia electricity price hub in PJM</div>
+        <div class="source-meta"><span class="tag">HEATMAP</span></div>
+        <a class="source-link" href="https://heatmap.news/energy/electricity-price-hub-pjm">heatmap.news</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">PJM rate shock: $100 billion data center electricity 2026</div>
+        <div class="source-meta"><span class="tag">INTROL</span> Projects $70/mo by 2028</div>
+        <a class="source-link" href="https://introl.com/blog/pjm-rate-shock-100-billion-data-center-electricity-2026">introl.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">PJM auction results: higher prices for ratepayers in 13 states</div>
+        <div class="source-meta"><span class="tag">NRDC</span></div>
+        <a class="source-link" href="https://www.nrdc.org/press-releases/pjm-auction-results-higher-prices-ratepayers-13-states">nrdc.org</a>
+      </div>
+    </div>
+
+    <!-- Per-State Bill Impacts -->
+    <div class="source-group">
+      <h3>Per-State Bill Impact Reports</h3>
+
+      <div class="source-item">
+        <div class="source-title">Bill and Rates Impact Report (PDF)</div>
+        <div class="source-meta"><span class="tag">MARYLAND OPC</span> August 2024</div>
+        <a class="source-link" href="https://opc.maryland.gov/Portals/0/Files/Publications/RMR%20Bill%20and%20Rates%20Impact%20Report_2024-08-14%20Final.pdf">opc.maryland.gov (PDF)</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">PJM Capacity Market Report (PDF)</div>
+        <div class="source-meta"><span class="tag">DC OPC / SYNAPSE</span></div>
+        <a class="source-link" href="https://opc-dc.gov/wp-content/uploads/2025/05/PJM-Capacity-Market-Report-FINAL-OPC-Synapse.pdf">opc-dc.gov (PDF)</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">2026/2027 auction results press release</div>
+        <div class="source-meta"><span class="tag">NJ BPU</span></div>
+        <a class="source-link" href="https://www.nj.gov/bpu/newsroom/2025/approved/20250723.html">nj.gov</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">New Jersey electricity utility bill increase</div>
+        <div class="source-meta"><span class="tag">WHYY</span></div>
+        <a class="source-link" href="https://whyy.org/articles/new-jersey-electricity-utility-bill-increase-june/">whyy.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Pennsylvania energy consumers facing ~$2.18 billion increase</div>
+        <div class="source-meta"><span class="tag">DUQUESNE LIGHT</span></div>
+        <a class="source-link" href="https://newsroom.duquesnelight.com/pennsylvania-energy-consumers-facing-approx-218-billion-increase-in-electric-bills">duquesnelight.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Ohio electric bills likely to keep going up after latest PJM auction</div>
+        <div class="source-meta"><span class="tag">OHIO CAPITAL JOURNAL</span></div>
+        <a class="source-link" href="https://ohiocapitaljournal.com/2025/07/29/get-used-to-it-ohio-electric-bills-likely-to-keep-going-up-after-latest-pjm-auction/">ohiocapitaljournal.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">How data centers are raising our bills in Illinois</div>
+        <div class="source-meta"><span class="tag">CUB</span> Citizens Utility Board</div>
+        <a class="source-link" href="https://www.citizensutilityboard.org/blog/2025/08/19/how-data-centers-are-raising-our-bills-in-illinois-and-what-we-should-do-about-it/">citizensutilityboard.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Hoosiers' electric bills spike 17.5% in one year</div>
+        <div class="source-meta"><span class="tag">INDIANA CAPITAL CHRONICLE</span></div>
+        <a class="source-link" href="https://indianacapitalchronicle.com/briefs/hoosiers-electric-bills-spike-17-5-in-one-year/">indianacapitalchronicle.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Upcoming electricity rate increase for Delmarva customers</div>
+        <div class="source-meta"><span class="tag">DELAWARE.GOV</span></div>
+        <a class="source-link" href="https://news.delaware.gov/2026/04/06/upcoming-electricity-rate-increase-adds-to-cost-increases-for-delmarva-customers/">delaware.gov</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Virginia's new data center electricity rate class</div>
+        <div class="source-meta"><span class="tag">AAF</span> American Action Forum</div>
+        <a class="source-link" href="https://www.americanactionforum.org/insight/virginias-new-data-center-electricity-rate-class/">americanactionforum.org</a>
+      </div>
+    </div>
+
+    <!-- Human Stories -->
+    <div class="source-group">
+      <h3>Human Stories &amp; Community Impact</h3>
+
+      <div class="source-item">
+        <div class="source-title">AI data centers' impact on electric bills, water, and more</div>
+        <div class="source-meta"><span class="tag">CONSUMER REPORTS</span> 2026 &middot; Profiles John Steinbach (Manassas, VA) and Ken &amp; Carol Apackki (Granville, OH)</div>
+        <a class="source-link" href="https://www.consumerreports.org/data-centers/ai-data-centers-impact-on-electric-bills-water-and-more-a1040338678/">consumerreports.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">AEP Ohio customers oppose proposed electric rate hike as data centers pressure grid</div>
+        <div class="source-meta"><span class="tag">WOSU</span> December 2025 &middot; Public testimony from Mark Krietemeyer and Shyreni Es</div>
+        <a class="source-link" href="https://www.wosu.org/politics-government/2025-12-05/aep-ohio-customers-oppose-proposed-electric-rate-hike-as-new-data-centers-pressure-grid">wosu.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">SCC begins hearing in Dominion Energy rate case</div>
+        <div class="source-meta"><span class="tag">LOUDOUN NOW</span> Seattle Ferguson testimony (VCU student)</div>
+        <a class="source-link" href="https://www.loudounnow.com/news/scc-begins-hearing-in-dominion-energy-rate-case/article_611bbf6b-bf47-4ff6-9484-05a326f791f3.html">loudounnow.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">"Living in Hell": Data center neighbors grapple with noise, air pollution</div>
+        <div class="source-meta"><span class="tag">U.S. NEWS</span> April 28, 2026 &middot; Donna Gallant (Bristow, VA)</div>
+        <a class="source-link" href="https://www.usnews.com/news/national-news/articles/2026-04-28/living-in-hell-data-center-neighbors-grapple-with-noise-air-pollution">usnews.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Sterling residents raise alarms over off-grid data center</div>
+        <div class="source-meta"><span class="tag">LOUDOUN NOW</span> Kasey Hatch (Sterling, VA) &middot; Noise and health impact</div>
+        <a class="source-link" href="https://www.loudounnow.com/news/sterling-residents-raise-alarms-over-off-grid-data-center/article_3481d7fd-11ef-4948-a951-8c4ee6e69f2f.html">loudounnow.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Data center noise: Sterling residents worry about health impact</div>
+        <div class="source-meta"><span class="tag">NBC4 WASHINGTON</span></div>
+        <a class="source-link" href="https://www.nbcwashington.com/news/local/northern-virginia/amid-constant-data-center-noise-sterling-residents-also-worry-about-health-impact/4091393/">nbcwashington.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Electricity rates in Ohio rise due to AI data centers</div>
+        <div class="source-meta"><span class="tag">WASHINGTON POST</span> July 2025</div>
+        <a class="source-link" href="https://www.washingtonpost.com/business/2025/07/27/electricity-rates-ohio-data-centers-ai/">washingtonpost.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Community pushback stalling $64B in data center development</div>
+        <div class="source-meta"><span class="tag">INSIDE CLIMATE NEWS</span> May 2025 &middot; Kathy Kulick, Robert Duvall</div>
+        <a class="source-link" href="https://insideclimatenews.org/news/19052025/virginia-data-center-development-community-pushback/">insideclimatenews.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Home electricity bills are skyrocketing. For data centers, not so much.</div>
+        <div class="source-meta"><span class="tag">YALE CLIMATE</span></div>
+        <a class="source-link" href="https://yaleclimateconnections.org/2026/01/home-electricity-bills-are-skyrocketing-for-data-centers-not-so-much/">yaleclimateconnections.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">AI data center frenzy is pushing up your electric bill</div>
+        <div class="source-meta"><span class="tag">CNBC</span> November 2025</div>
+        <a class="source-link" href="https://www.cnbc.com/2025/11/26/ai-data-center-frenzy-is-pushing-up-your-electric-bill-heres-why.html">cnbc.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Data center power demands contributing to higher energy bills</div>
+        <div class="source-meta"><span class="tag">EESI</span></div>
+        <a class="source-link" href="https://www.eesi.org/articles/view/data-center-power-demands-are-contributing-to-higher-energy-bills">eesi.org</a>
+      </div>
+    </div>
+
+    <!-- Regulatory -->
+    <div class="source-group">
+      <h3>Regulatory &amp; Policy</h3>
+
+      <div class="source-item">
+        <div class="source-title">Introductory Guide to Electricity Markets</div>
+        <div class="source-meta"><span class="tag">FERC</span> "FERC does not have authority over your electricity purchases"</div>
+        <a class="source-link" href="https://www.ferc.gov/introductory-guide-electricity-markets-regulated-federal-energy-regulatory-commission">ferc.gov</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">FERC 101: Electricity Regulation</div>
+        <div class="source-meta"><span class="tag">RFF</span> Resources for the Future</div>
+        <a class="source-link" href="https://www.rff.org/publications/explainers/ferc-101-electricity-regulation-and-the-federal-energy-regulatory-commission/">rff.org</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Confronting rising energy bills linked to data centers</div>
+        <div class="source-meta"><span class="tag">BROOKINGS</span></div>
+        <a class="source-link" href="https://www.brookings.edu/articles/confronting-and-addressing-rising-energy-bills-linked-to-data-centers/">brookings.edu</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Consumers end up paying for the energy demands of data centers</div>
+        <div class="source-meta"><span class="tag">GEORGETOWN LAW</span> Environmental Law Review</div>
+        <a class="source-link" href="https://www.law.georgetown.edu/environmental-law-review/blog/consumers-end-up-paying-for-the-energy-demands-of-data-centers-how-can-regulators-fight-back/">georgetown.edu</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Large load tariffs and clean transition tariffs</div>
+        <div class="source-meta"><span class="tag">COLUMBIA LAW</span> Climate Law Blog &middot; 23 states have approved at least one large load tariff as of May 2026</div>
+        <a class="source-link" href="https://blogs.law.columbia.edu/climatechange/2026/06/02/data-center-regulation-what-local-governments-should-know-about-large-load-tariffs-and-clean-transition-tariffs/">columbia.edu</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Dominion proposes higher rates, new rate class for data centers</div>
+        <div class="source-meta"><span class="tag">VIRGINIA MERCURY</span> November 2025</div>
+        <a class="source-link" href="https://virginiamercury.com/2025/11/25/scc-approves-chesterfield-gas-plant-and-dominion-rate-hike-creates-new-rate-class-for-data-centers/">virginiamercury.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Dominion proposes higher utility rates, new rate class</div>
+        <div class="source-meta"><span class="tag">VIRGINIA MERCURY</span> September 2025</div>
+        <a class="source-link" href="https://virginiamercury.com/2025/09/03/dominion-proposes-higher-utility-rates-new-rate-class-for-data-centers/">virginiamercury.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Loudoun County advances changes to data center regulations</div>
+        <div class="source-meta"><span class="tag">VIRGINIA BUSINESS</span></div>
+        <a class="source-link" href="https://virginiabusiness.com/loudoun-county-advances-changes-to-data-center-regulations/">virginiabusiness.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Prince William County Digital Gateway data center appeal</div>
+        <div class="source-meta"><span class="tag">WJLA</span> Elena Schlossberg, Coalition to Protect Prince William County</div>
+        <a class="source-link" href="https://wjla.com/news/local/prince-william-county-digital-gateway-datacenter-appeal-lawsuit-rezoning-rural-farmland-manassas-battlefield-community-opposition-judges-construction-halted-developer-qts-compass-blackstone-supreme-virginia-economy-environment-landuse">wjla.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Virginia data center noise</div>
+        <div class="source-meta"><span class="tag">THE HILL</span></div>
+        <a class="source-link" href="https://www.newsnationnow.com/the-hill/virginia-data-center-noise/">newsnationnow.com</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>We try to cite every source we use. Some links may go stale over time. If you find a broken one, the title and publication should be enough to track it down. Data was gathered from public filings, regulatory testimony, and news coverage available as of June 2026. We're not energy analysts, just researchers doing our best to get it right. If something looks off, let us know.<br><br>
+    <a href="/">All Episodes</a> &middot; <a href="https://www.youtube.com/@Xamined">Subscribe on YouTube</a></p>
+  </div>
+
+</div>
+</body>
+</html>
