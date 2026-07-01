@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knight Capital: $440 Million Lost in 45 Minutes | Sources | Xamined</title>
+<meta name="description" content="On August 1, 2012, Knight Capital lost $440 million in 45 minutes because of dead code from 2003. One server missed a deployment. The old code woke up and traded 154 stocks in the wrong direction. Sources and timeline.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Dead Code Burned $440 Million in 45 Minutes",
+  "description": "On August 1, 2012, Knight Capital deployed a software update to their trading servers. One server missed the update and reactivated dead code from 2003, an old trading module that bought high and sold low on 154 stocks simultaneously. In 45 minutes the company lost $440 million, more than it was worth. GETCO acquired Knight Capital four months later.",
+  "thumbnailUrl": "https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg",
+  "uploadDate": "2026-07-01",
+  "duration": "PT0M27S",
+  "contentUrl": "https://www.youtube.com/watch?v=VIDEO_ID",
+  "embedUrl": "https://www.youtube.com/embed/VIDEO_ID",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://www.youtube.com/watch?v=VIDEO_ID&t={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F8F5EF; --bg-elevated: #EFEBE3; --text-primary: #1A1C1A;
+    --text-secondary: #5C564D; --accent-red: #B5302A; --accent-blue: #2B5F85;
+    --rule-line: #D4CCBA; --stamp-red: #8B2020;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text-primary); font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  .hero { padding: 60px 0 40px; border-bottom: 1px solid var(--rule-line); text-align: center; }
+  .hero .channel { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; }
+  .hero .channel a { color: var(--text-secondary); text-decoration: none; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; line-height: 1.15; margin-bottom: 12px; }
+  .hero .subtitle { font-size: 18px; color: var(--text-secondary); font-style: italic; line-height: 1.5; max-width: 560px; margin: 0 auto; }
+  .hero .breadcrumb { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text-secondary); margin-top: 18px; }
+  .hero .breadcrumb a { color: var(--text-secondary); }
+  .section-heading { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; margin-bottom: 6px; padding-bottom: 10px; border-bottom: 2px solid var(--accent-red); display: inline-block; }
+  .section-desc { font-size: 15px; color: var(--text-secondary); margin-top: 6px; margin-bottom: 24px; line-height: 1.6; }
+  .key-stats { padding: 36px 0; border-bottom: 1px solid var(--rule-line); }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .stat-card { background: var(--bg-elevated); border: 1px solid var(--rule-line); border-radius: 4px; padding: 20px 16px; text-align: center; }
+  .stat-card .stat-number { font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 600; color: var(--accent-red); line-height: 1.2; }
+  .stat-card .stat-label { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; color: var(--text-secondary); margin-top: 6px; line-height: 1.4; }
+  .content-section { padding: 40px 0; border-bottom: 1px solid var(--rule-line); }
+  .content-section p { margin-bottom: 16px; }
+  .timeline-item { display: flex; gap: 20px; margin-bottom: 20px; }
+  .timeline-time { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 600; color: var(--accent-red); min-width: 90px; padding-top: 2px; }
+  .timeline-text { font-size: 15px; line-height: 1.6; }
+  .sources-section { padding: 40px 0; }
+  .source-group { margin-bottom: 36px; }
+  .source-group h3 { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-red); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--rule-line); }
+  .source-item { background: var(--bg-elevated); border: 1px solid var(--rule-line); border-radius: 3px; padding: 14px 18px; margin-bottom: 8px; }
+  .source-item .source-title { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 15px; color: var(--text-primary); margin-bottom: 3px; }
+  .source-item .source-meta { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--text-secondary); }
+  .source-item .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.05em; padding: 2px 7px; border-radius: 2px; background: rgba(181,48,42,0.08); color: var(--stamp-red); margin-right: 5px; }
+  .source-item a.source-link { display: inline-block; margin-top: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px; word-break: break-all; }
+  .footer { border-top: 1px solid var(--rule-line); padding: 30px 0 50px; text-align: center; }
+  .footer p { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 28px; } .container { padding: 0 20px; } .timeline-item { flex-direction: column; gap: 4px; } }
+  @media (max-width: 500px) { .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .stat-card .stat-number { font-size: 22px; } .hero h1 { font-size: 24px; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <a href="https://www.youtube.com/@Xamined" style="display:inline-block;margin-bottom:12px;text-decoration:none;">
+      <img src="/favicon.svg" alt="Xamined" width="48" height="48" style="border-radius:10px;">
+    </a>
+    <div class="channel"><a href="https://www.youtube.com/@Xamined">Xamined</a></div>
+    <h1>Knight Capital: $440 Million in 45 Minutes</h1>
+    <div class="subtitle">August 1, 2012. Dead code, one server, bankruptcy.</div>
+    <div class="breadcrumb"><a href="/">All Episodes</a> / Sources</div>
+  </div>
+
+  <!-- Video embed: replace VIDEO_ID after publishing -->
+  <div style="padding:40px 0 0;text-align:center;">
+    <div style="position:relative;width:100%;max-width:720px;margin:0 auto;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#1a1a1a;">
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Inter',sans-serif;font-size:14px;color:#666;">Video embed appears after publish</div>
+    </div>
+  </div>
+
+  <div class="key-stats">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">$440M</div>
+        <div class="stat-label">lost in trading losses</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">45 min</div>
+        <div class="stat-label">from deploy to bankruptcy</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">154</div>
+        <div class="stat-label">stocks traded simultaneously</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">8 yrs</div>
+        <div class="stat-label">age of the dead code</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-heading">What Happened</h2>
+    <div class="section-desc">The shortest path from a routine deployment to corporate death.</div>
+
+    <p>Knight Capital Group was one of the largest market makers on the NYSE. They handled about 17% of all trading volume. On August 1, 2012, they deployed a software update to eight production servers in preparation for the NYSE's new Retail Liquidity Program.</p>
+
+    <p>Seven servers got the update. One did not. That eighth server still had an old trading module called Power Peg, written in 2003 and decommissioned years earlier. The deployment reused a configuration flag that had previously controlled Power Peg. On the seven updated servers, that flag triggered the new RLP code. On the eighth server, it woke up Power Peg.</p>
+
+    <p>Power Peg did one thing: buy at the ask and sell at the bid. The opposite of what a market maker wants. It executed trades on 154 stocks at a rate of millions of dollars per second. By 10:00 AM, 45 minutes after market open, Knight Capital had accumulated $440 million in losses. That was more than the company's total market capitalization.</p>
+
+    <p>Knight secured an emergency $400 million bailout from a group of investors, giving up 73% of the company's equity. GETCO acquired what was left in December 2012. The SEC fined Knight Capital $12 million in October 2013.</p>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-heading">Timeline</h2>
+
+    <div class="timeline-item">
+      <div class="timeline-time">Jul 31</div>
+      <div class="timeline-text">Knight deploys RLP code to production servers. One of eight servers does not receive the update.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">9:30 AM</div>
+      <div class="timeline-text">NYSE opens. The SMARS routing system sends orders to all eight servers. Seven execute the new RLP logic. The eighth activates Power Peg.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">9:31 AM</div>
+      <div class="timeline-text">Anomalous trading activity begins. Power Peg buys high and sells low across 154 stocks.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">9:32 AM</div>
+      <div class="timeline-text">Knight's error account starts accumulating massive positions. Internal risk systems flag the activity but do not automatically halt trading.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">~10:00 AM</div>
+      <div class="timeline-text">Knight identifies the problem and begins pulling servers offline.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:15 AM</div>
+      <div class="timeline-text">Power Peg is killed. Total losses: $440 million. Knight's stock drops 75% over the next two days.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">Aug 6</div>
+      <div class="timeline-text">Emergency $400M bailout closes. Knight gives up 73% equity.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">Dec 2012</div>
+      <div class="timeline-text">GETCO acquires Knight Capital. The company ceases to exist as an independent entity.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">Oct 2013</div>
+      <div class="timeline-text">SEC fines Knight Capital $12 million for violations of the Market Access Rule.</div>
+    </div>
+  </div>
+
+  <div class="sources-section">
+    <h2 class="section-heading">Sources</h2>
+
+    <div class="source-group">
+      <h3>Regulatory</h3>
+      <div class="source-item">
+        <div class="source-title">In the Matter of Knight Capital Americas LLC: Administrative Proceeding File No. 3-15570</div>
+        <div class="source-meta"><span class="tag">SEC</span> October 16, 2013. The official SEC order detailing the sequence of events, the Power Peg code, and the $12M penalty.</div>
+        <a class="source-link" href="https://www.sec.gov/litigation/admin/2013/34-70694.pdf">sec.gov/litigation/admin/2013/34-70694.pdf</a>
+      </div>
+    </div>
+
+    <div class="source-group">
+      <h3>Reporting</h3>
+      <div class="source-item">
+        <div class="source-title">Knight Capital Says Trading Glitch Cost It $440 Million</div>
+        <div class="source-meta"><span class="tag">BLOOMBERG</span> August 2, 2012</div>
+      </div>
+      <div class="source-item">
+        <div class="source-title">Knight Capital Group's $440 Million Error</div>
+        <div class="source-meta"><span class="tag">REUTERS</span> August 1, 2012</div>
+      </div>
+      <div class="source-item">
+        <div class="source-title">How a $440 Million Trading Glitch Killed Knight Capital</div>
+        <div class="source-meta"><span class="tag">BLOOMBERG</span> Postmortem analysis with internal timeline</div>
+      </div>
+      <div class="source-item">
+        <div class="source-title">Getco to Buy Knight Capital in $1.4 Billion Deal</div>
+        <div class="source-meta"><span class="tag">NY TIMES</span> December 19, 2012</div>
+      </div>
+    </div>
+
+    <div class="source-group">
+      <h3>Technical Analysis</h3>
+      <div class="source-item">
+        <div class="source-title">Knight Capital and the Importance of Code Cleanup</div>
+        <div class="source-meta"><span class="tag">ACM QUEUE</span> Doug Henney. Why dead code in production is a systemic risk.</div>
+      </div>
+      <div class="source-item">
+        <div class="source-title">NYSE Market Data: August 1, 2012</div>
+        <div class="source-meta"><span class="tag">NYSE</span> Anomalous volume across 154 securities during the first 45 minutes of trading.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Sources verified at time of publication. Links break. Titles and authors should help you track things down.<br>
+    <a href="/">Back to all episodes</a></p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -15,7 +15,6 @@
     --text-secondary: #5C564D;
     --accent-red: #B5302A;
     --accent-blue: #2B5F85;
-    --accent-amber: #9B7A1C;
     --rule-line: #D4CCBA;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -54,21 +53,41 @@
 
   .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
 
-  .episode-list {
-    padding: 50px 0;
-  }
+  .episode-list { padding: 50px 0; }
+
   .episode-card {
-    display: block;
+    display: flex;
+    gap: 24px;
     background: var(--bg-elevated);
     border: 1px solid var(--rule-line);
     border-radius: 4px;
-    padding: 28px 32px;
+    padding: 20px;
     margin-bottom: 16px;
     transition: border-color 0.2s;
+    align-items: flex-start;
   }
   .episode-card:hover {
     border-color: var(--accent-red);
     text-decoration: none;
+  }
+  .episode-card .ep-thumb {
+    flex-shrink: 0;
+    width: 280px;
+    aspect-ratio: 16/9;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+  .episode-card .ep-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .episode-card .ep-info {
+    flex: 1;
+    min-width: 0;
+    padding-top: 4px;
   }
   .episode-card .ep-label {
     font-family: 'JetBrains Mono', monospace;
@@ -101,6 +120,11 @@
     font-size: 13px;
     color: var(--text-secondary);
   }
+
+  @media (max-width: 700px) {
+    .episode-card { flex-direction: column; }
+    .episode-card .ep-thumb { width: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -110,28 +134,64 @@
         <img src="/favicon.svg" alt="Xamined" width="48" height="48" style="border-radius:10px;">
       </a>
       <div><a href="https://www.youtube.com/@Xamined" class="channel" style="text-decoration:none;color:var(--text-secondary)">Xamined</a></div>
-      <h1>Sources & Citations</h1>
+      <h1>Sources &amp; Citations</h1>
     </div>
 
     <div class="episode-list">
+      <a href="/knight-capital" class="episode-card">
+        <div class="ep-thumb">
+          <img src="https://img.youtube.com/vi/VIDEO_ID/mqdefault.jpg" alt="Knight Capital Short thumbnail" onerror="this.style.display='none'">
+        </div>
+        <div class="ep-info">
+          <div class="ep-label">Short &middot; August 1, 2012</div>
+          <div class="ep-title">Knight Capital: $440 Million in 45 Minutes</div>
+          <div class="ep-desc">One server missed a deployment. Dead code from 2003 woke up and traded 154 stocks in the wrong direction. The company was bankrupt by Monday.</div>
+        </div>
+      </a>
+
       <a href="/ai-hidden-cost" class="episode-card">
-        <div class="ep-label">Xamined #2</div>
-        <div class="ep-title">AI Is Quietly Adding $27 to Your Electric Bill</div>
-        <div class="ep-desc">Sixty-five million people across 13 states are paying more for electricity because of data centers. Per-state data, sources, and regulatory filings.</div>
+        <div class="ep-thumb">
+          <img src="https://img.youtube.com/vi/lQ5I6qrtS1c/mqdefault.jpg" alt="AI Hidden Cost thumbnail">
+        </div>
+        <div class="ep-info">
+          <div class="ep-label">Xamined #2</div>
+          <div class="ep-title">AI Is Quietly Adding $27 to Your Electric Bill</div>
+          <div class="ep-desc">Sixty-five million people across 13 states are paying more for electricity because of data centers. Per-state data, sources, and regulatory filings.</div>
+        </div>
       </a>
 
       <a href="/cloudflare-regex" class="episode-card">
-        <div class="ep-label">Xamined #1</div>
-        <div class="ep-title">One Regex Took Down Half the Internet for 27 Minutes</div>
-        <div class="ep-desc">On July 2, 2019, a single regex pattern in Cloudflare's WAF caused catastrophic backtracking across their edge network. 502 errors, a locked-out dashboard, and a full engine rewrite in Rust.</div>
+        <div class="ep-thumb">
+          <img src="https://img.youtube.com/vi/hTY_jOF8uWk/mqdefault.jpg" alt="Cloudflare Regex thumbnail">
+        </div>
+        <div class="ep-info">
+          <div class="ep-label">Xamined #1</div>
+          <div class="ep-title">One Regex Took Down Half the Internet for 27 Minutes</div>
+          <div class="ep-desc">On July 2, 2019, a single regex pattern in Cloudflare's WAF caused catastrophic backtracking across their edge network. 502 errors, a locked-out dashboard, and a full engine rewrite in Rust.</div>
+        </div>
+      </a>
+
+      <a href="/aws-dns-outage" class="episode-card">
+        <div class="ep-thumb">
+          <img src="https://img.youtube.com/vi/fEKgerIvXcQ/mqdefault.jpg" alt="AWS DNS Outage thumbnail">
+        </div>
+        <div class="ep-info">
+          <div class="ep-label">Xamined &middot; October 19, 2025</div>
+          <div class="ep-title">The DNS Race Condition That Broke AWS for 15 Hours</div>
+          <div class="ep-desc">Two automated jobs raced each other inside AWS's internal DNS. The slow one won with stale data. DynamoDB, Lambda, S3, and 50+ services went dark.</div>
+        </div>
       </a>
 
       <a href="/flash-crash" class="episode-card">
-        <div class="ep-label">Episode 02 &middot; May 6, 2010</div>
-        <div class="ep-title">The Flash Crash</div>
-        <div class="ep-desc">$1 trillion vanished in five minutes. It took a decade to find out why. 39 sources cited.</div>
+        <div class="ep-thumb">
+          <img src="https://img.youtube.com/vi/AMn8tG3G62k/mqdefault.jpg" alt="Flash Crash thumbnail">
+        </div>
+        <div class="ep-info">
+          <div class="ep-label">Episode 02 &middot; May 6, 2010</div>
+          <div class="ep-title">The Flash Crash</div>
+          <div class="ep-desc">$1 trillion vanished in five minutes. It took a decade to find out why. 39 sources cited.</div>
+        </div>
       </a>
-
     </div>
 
     <div class="footer">
