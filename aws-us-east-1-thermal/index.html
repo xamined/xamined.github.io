@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why One Building In Virginia Runs Half The Internet | Sources | Xamined</title>
+<meta name="description" content="On May 7, 2026, chiller units failed in a single AWS availability zone in Ashburn, Virginia. Coinbase went offline for hours, FanDuel dropped mid-NBA playoff game, 150+ cloud services degraded. A 20-hour outage traced to one physical building. Sources, timeline, and evidence.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Why One Building In Virginia Runs Half The Internet",
+  "description": "On May 7, 2026, chiller units failed simultaneously in a single availability zone (use1-az4) of AWS us-east-1 in Ashburn, Virginia. Cooling loss triggered a thermal-safety shutdown. Coinbase halted trading for ~7 hours. FanDuel went dark during Game 2 of the NBA Playoffs. More than 150 cloud services degraded. Full cooling capacity was not restored until ~20 hours later. This episode traces the physical, historical, and regulatory reasons why so much of the internet still runs from one building in Loudoun County, Virginia.",
+  "thumbnailUrl": "https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg",
+  "uploadDate": "2026-07-04",
+  "duration": "PT18M0S",
+  "contentUrl": "https://www.youtube.com/watch?v=VIDEO_ID",
+  "embedUrl": "https://www.youtube.com/embed/VIDEO_ID",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://www.youtube.com/watch?v=VIDEO_ID&t={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F8F5EF; --bg-elevated: #EFEBE3; --text-primary: #1A1C1A;
+    --text-secondary: #5C564D; --accent-red: #B5302A; --accent-blue: #2B5F85;
+    --rule-line: #D4CCBA; --stamp-red: #8B2020;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text-primary); font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  .hero { padding: 60px 0 40px; border-bottom: 1px solid var(--rule-line); text-align: center; }
+  .hero .channel { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; }
+  .hero .channel a { color: var(--text-secondary); text-decoration: none; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; line-height: 1.12; margin-bottom: 14px; max-width: 780px; margin-left: auto; margin-right: auto; }
+  .hero .subtitle { font-size: 18px; color: var(--text-secondary); font-style: italic; line-height: 1.55; max-width: 640px; margin: 0 auto; }
+  .hero .breadcrumb { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text-secondary); margin-top: 18px; }
+  .hero .breadcrumb a { color: var(--text-secondary); }
+  .section-heading { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; margin-bottom: 6px; padding-bottom: 10px; border-bottom: 2px solid var(--accent-red); display: inline-block; }
+  .section-desc { font-size: 15px; color: var(--text-secondary); margin-top: 6px; margin-bottom: 24px; line-height: 1.6; }
+  .key-stats { padding: 36px 0; border-bottom: 1px solid var(--rule-line); }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .stat-card { background: var(--bg-elevated); border: 1px solid var(--rule-line); border-radius: 4px; padding: 20px 16px; text-align: center; }
+  .stat-card .stat-number { font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 600; color: var(--accent-red); line-height: 1.2; }
+  .stat-card .stat-label { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; color: var(--text-secondary); margin-top: 6px; line-height: 1.4; }
+  .content-section { padding: 40px 0; border-bottom: 1px solid var(--rule-line); }
+  .content-section p { margin-bottom: 16px; }
+  .timeline-item { display: flex; gap: 20px; margin-bottom: 18px; }
+  .timeline-time { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 600; color: var(--accent-red); min-width: 140px; padding-top: 2px; }
+  .timeline-text { font-size: 15px; line-height: 1.6; }
+  .sources-section { padding: 40px 0; }
+  .source-group { margin-bottom: 36px; }
+  .source-group h3 { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-red); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--rule-line); }
+  .source-item { background: var(--bg-elevated); border: 1px solid var(--rule-line); border-radius: 3px; padding: 14px 18px; margin-bottom: 8px; }
+  .source-item .source-title { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 15px; color: var(--text-primary); margin-bottom: 3px; }
+  .source-item .source-meta { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--text-secondary); }
+  .source-item .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.05em; padding: 2px 7px; border-radius: 2px; background: rgba(181,48,42,0.08); color: var(--stamp-red); margin-right: 5px; }
+  .source-item .tag.data { background: rgba(43,95,133,0.10); color: var(--accent-blue); }
+  .source-item .tag.gray { background: rgba(92,86,77,0.10); color: var(--text-secondary); }
+  .source-item .source-quote { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 14px; color: var(--text-secondary); margin-top: 8px; padding: 8px 12px; border-left: 3px solid var(--rule-line); line-height: 1.5; }
+  .source-item a.source-link { display: inline-block; margin-top: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px; word-break: break-all; }
+  .footer { border-top: 1px solid var(--rule-line); padding: 30px 0 50px; text-align: center; }
+  .footer p { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .highlight-box { background: var(--bg-elevated); border-left: 4px solid var(--accent-red); padding: 20px 24px; margin: 24px 0; border-radius: 0 4px 4px 0; }
+  .highlight-box p { margin-bottom: 0; }
+  .quote-block { background: var(--bg-elevated); border-left: 4px solid var(--accent-red); padding: 24px 28px; margin: 28px 0; font-family: 'Playfair Display', serif; font-size: 20px; line-height: 1.45; font-weight: 700; color: var(--text-primary); }
+  .quote-block .attribution { display: block; margin-top: 12px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: var(--text-secondary); font-style: normal; letter-spacing: 0.03em; }
+  @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 30px; } .container { padding: 0 20px; } .timeline-item { flex-direction: column; gap: 4px; } .timeline-time { min-width: auto; } }
+  @media (max-width: 500px) { .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .stat-card .stat-number { font-size: 22px; } .hero h1 { font-size: 25px; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <a href="https://www.youtube.com/@Xamined" style="display:inline-block;margin-bottom:12px;text-decoration:none;">
+      <img src="/favicon.svg" alt="Xamined" width="48" height="48" style="border-radius:10px;">
+    </a>
+    <div class="channel"><a href="https://www.youtube.com/@Xamined">Xamined</a></div>
+    <h1>Why One Building In Virginia Runs Half The Internet</h1>
+    <div class="subtitle">May 7, 2026: chiller units failed inside a single AWS availability zone in Ashburn. Coinbase went dark for hours. FanDuel dropped mid-NBA playoff game. 150+ cloud services followed.</div>
+    <div class="breadcrumb"><a href="/">All Episodes</a> / Sources</div>
+  </div>
+
+  <div style="padding:40px 0 0;text-align:center;">
+    <div style="max-width:800px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#1a1a1a;aspect-ratio:16/9;">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="border-radius:12px;"></iframe>
+    </div>
+  </div>
+
+  <div class="key-stats">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">~20 hrs</div>
+        <div class="stat-label">to restore full cooling capacity</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">use1-az4</div>
+        <div class="stat-label">the single availability zone that failed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">cloud services affected (StatusGator)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5,000 MW</div>
+        <div class="stat-label">Loudoun County datacenter capacity &mdash; more than Beijing</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-heading">The Incident</h2>
+    <div class="section-desc">May 7&ndash;8, 2026 &mdash; a physical failure inside AWS's oldest region</div>
+
+    <p>At <strong>7:20 PM Eastern Time on May 7, 2026</strong>, multiple chiller units failed simultaneously inside a single data hall in AWS's Northern Virginia region (availability zone <strong>use1-az4</strong>). The cooling loss triggered a thermal-safety shutdown of the affected racks. This is the physical part of the story: an air-conditioning failure took the servers offline.</p>
+
+    <p>28 minutes later, in San Francisco, Coinbase engineers watched their matching engine lose quorum. At <strong>7:48 PM ET</strong>, nearly all trading on Coinbase halted. FanDuel dropped mid-broadcast during Game 2 of the Lakers&ndash;Thunder NBA Playoff series. CME market data feeds degraded. StatusGator captured 2,370 status changes across 748 services in the next seven hours &mdash; more than 150 distinct cloud services were affected.</p>
+
+    <p>Full cooling system capacity was not restored until <strong>~1:50 PM Pacific Time on May 8</strong>, giving AWS an approximate 20-hour recovery arc. Coinbase's own postmortem describes the outage as "unacceptable to us."</p>
+
+    <div class="quote-block">
+      "At 7:20 PM ET, multiple chiller units failed simultaneously in a single data hall inside AWS's us-east-1 region (availability zone use1-az4). The cooling loss triggered a thermal-safety shutdown of the affected racks."
+      <span class="attribution">&mdash; Coinbase Engineering, May 7 2026 postmortem</span>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-heading">Timeline</h2>
+    <div class="section-desc">Chiller failure to full recovery, and the decade of precedent behind it</div>
+
+    <div class="timeline-item">
+      <div class="timeline-time">Mar 2017</div>
+      <div class="timeline-text"><strong>Precedent.</strong> An AWS S3 engineer runs a command with a typo. The same Northern Virginia region goes dark for four hours. Half the internet goes with it. AWS publishes a post-event summary. The industry stays on us-east-1.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">Dec 2021</div>
+      <div class="timeline-text"><strong>Precedent again.</strong> A different mechanism &mdash; internal network scaling triggers a client surge &mdash; but the same region fails. Netflix, Disney+, Delta all affected. AWS publishes another post-event summary. The industry stays on us-east-1.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">May 5, 2026</div>
+      <div class="timeline-text">Uptime Institute publishes its 2026 Annual Outage Analysis. Cooling failures rank second only to power as a cause of major datacenter incidents. AI-driven thermal density is straining legacy designs.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">7:20 PM ET May 7</div>
+      <div class="timeline-text"><strong>Chiller failure.</strong> Multiple chiller units fail simultaneously in a single data hall in use1-az4. Thermal-safety shutdown affects EC2 instances and EBS volumes on impacted hardware.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">7:48 PM ET May 7</div>
+      <div class="timeline-text">Nearly all Coinbase trading halts. Matching engine loses quorum inside its AWS Cluster Placement Group in use1-az4.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">~9:00 PM ET May 7</div>
+      <div class="timeline-text">FanDuel goes offline during NBA Playoffs Game 2 (Lakers vs. Thunder). CME Group trading platform issues reported.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">9:29 PM ET May 7</div>
+      <div class="timeline-text">Coinbase status page flips to "major outage." StatusGator begins recording downstream cascade across 748 services.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">Overnight May 7&ndash;8</div>
+      <div class="timeline-text">AWS shifts traffic away from the impacted AZ for most services. Coinbase ships an emergency code change to its matching engine's quorum config so it can start with 3 of 5 voting servers instead of 5 of 5.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">1:50 PM PT May 8</div>
+      <div class="timeline-text"><strong>Full cooling capacity restored.</strong> Majority of impaired EC2 instances and EBS volumes recovered. ~20 hours after start.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">May 8, 2026</div>
+      <div class="timeline-text">StatusGator reports 2,370 status changes across 748 services between midnight and 7 AM. More than 150 distinct cloud services affected. Coinbase publishes its postmortem calling the duration "unacceptable to us."</div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-heading">The Building</h2>
+    <div class="section-desc">Why Ashburn, Virginia carries load-bearing weight for the internet</div>
+
+    <p>us-east-1 is not a "region" in any abstract sense. It is a set of physical data halls concentrated in <strong>Loudoun County, Virginia</strong>. AWS launched here in 2006 as its first region &mdash; there was no us-west, no eu-central. Every AWS tutorial, every default configuration, every "Getting Started" doc pointed here. That default never went away.</p>
+
+    <p>Loudoun County publishes its own datacenter counts. As of 2025, the county has <strong>199 existing datacenters with 117 more in development</strong>. Northern Virginia holds nearly <strong>5,000 megawatts of datacenter capacity</strong> &mdash; more than twice as much as Beijing, the closest competitor. Dominion Energy has received requests for <strong>40,000 MW</strong> of datacenter capacity as of December 2024 &mdash; roughly three times the utility's all-time peak load.</p>
+
+    <div class="highlight-box">
+      <p><strong>The industry didn't choose us-east-1. It inherited it.</strong> Reserved Instance pricing locks customers into the region they started in. Cross-region data transfer costs money. Service parity between regions lags. Every serious engineering team knows the concentration risk, and every serious engineering team stays.</p>
+    </div>
+
+    <p>Amazon's own SEC 10-Q filings acknowledge this. Buried in Item 1A Risk Factors is a section titled <em>"We Face Risks Related to System Interruption and Lack of Redundancy."</em> The paragraph underneath lists the causes: natural disasters, extreme weather, operational failures &mdash; <strong>including from energy shortages</strong>. Amazon's lawyers write this every quarter. Investors have been paid to ignore it.</p>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-heading">The Pattern</h2>
+    <div class="section-desc">Three region-scale failures in the same physical location in a decade</div>
+
+    <table style="width:100%;border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:14px;margin:20px 0;">
+      <thead>
+        <tr style="border-bottom:2px solid var(--accent-red);text-align:left;">
+          <th style="padding:8px 12px;font-family:'Inter',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);">Date</th>
+          <th style="padding:8px 12px;font-family:'Inter',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);">Cause</th>
+          <th style="padding:8px 12px;font-family:'Inter',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);">Duration</th>
+          <th style="padding:8px 12px;font-family:'Inter',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);">Notable Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--rule-line);"><td style="padding:8px 12px;">Mar 2017</td><td style="padding:8px 12px;">S3 typo</td><td style="padding:8px 12px;">~4 hours</td><td style="padding:8px 12px;">Netflix, Slack, Trello, Airbnb, Docker Hub</td></tr>
+        <tr style="border-bottom:1px solid var(--rule-line);"><td style="padding:8px 12px;">Dec 2021</td><td style="padding:8px 12px;">Internal network scaling</td><td style="padding:8px 12px;">~7 hours</td><td style="padding:8px 12px;">Netflix, Disney+, Delta, Robinhood</td></tr>
+        <tr><td style="padding:8px 12px;color:var(--accent-red);font-weight:600;">May 2026</td><td style="padding:8px 12px;color:var(--accent-red);font-weight:600;">Chiller units, cooling loss</td><td style="padding:8px 12px;color:var(--accent-red);font-weight:600;">~20 hours</td><td style="padding:8px 12px;color:var(--accent-red);font-weight:600;">Coinbase, FanDuel, CME, 150+ services</td></tr>
+      </tbody>
+    </table>
+
+    <div class="quote-block">
+      "Everything fails, all the time."
+      <span class="attribution">&mdash; Werner Vogels, AWS CTO (coined c. 2008, still displayed on his conference-swag t-shirts)</span>
+    </div>
+
+    <p>Vogels was right about the thing that fails. He was wrong about the number of times most companies have permission to fail with it. If your entire industry runs on one physical location, "everything fails" becomes a promise about your customers, not your engineering.</p>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-heading">The Standard</h2>
+    <div class="section-desc">What Coinbase said in its own postmortem</div>
+
+    <div class="quote-block">
+      "Our standard for being available does not depend on whether AWS has an outage. It rests entirely on whether we have built systems resilient enough to withstand one."
+      <span class="attribution">&mdash; Coinbase Engineering, May 7 2026 postmortem</span>
+    </div>
+
+    <p>That is a sentence public companies almost never write. It is also the correct standard. And it is a standard that requires a working alternative to us-east-1 &mdash; an alternative that has not been built.</p>
+
+    <p>The public planning office in Loudoun County keeps filing paperwork. Dominion Energy keeps filing load projections. The transmission grid keeps growing. And every serious engineering team in America keeps typing <code>us-east-1</code> out of habit, because the economics have not changed and the alternative has not been built.</p>
+
+    <p><strong>The next chiller will fail too. The paperwork is already in.</strong></p>
+  </div>
+
+  <div class="sources-section">
+    <h2 class="section-heading">Sources</h2>
+    <div class="section-desc">Every claim in this video traced to its source. 25 primary sources plus supplemental reporting.</div>
+
+    <div class="source-group">
+      <h3>Primary Journalism (Trade Press &amp; Long-Form)</h3>
+
+      <div class="source-item">
+        <div class="source-title">AWS warns of EC2 impairment as power loss hits notorious us-east-1 region</div>
+        <div class="source-meta"><span class="tag">S1</span> The Register &middot; Simon Sharwood &middot; May 8, 2026</div>
+        <div class="source-quote">"EC2 instances and EBS volumes hosted on impacted hardware are affected by the loss of power during the thermal event."</div>
+        <a class="source-link" href="https://www.theregister.com/off-prem/2026/05/08/aws-warns-of-ec2-impairment-as-power-loss-hits-notorious-us-east-1-region/5235509">theregister.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">AWS hit by us-east-1 outage after data center thermal event</div>
+        <div class="source-meta"><span class="tag">S2</span> Network World &middot; Gyana Swain &middot; May 11, 2026</div>
+        <a class="source-link" href="https://www.networkworld.com/article/4168878/aws-hit-by-us-east-1-outage-after-data-center-thermal-event.html">networkworld.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">AWS outage explained: May 2026 data center overheating</div>
+        <div class="source-meta"><span class="tag">S3</span> IT Pro &middot; Emma Woollacott &middot; May 8, 2026</div>
+        <a class="source-link" href="https://www.itpro.com/infrastructure/aws-outage-explained-may-2026-data-center-overheating">itpro.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">AWS experiences power issues at Northern Virginia cloud region</div>
+        <div class="source-meta"><span class="tag">S4</span> Data Center Dynamics &middot; Georgia Butler &middot; May 8, 2026</div>
+        <a class="source-link" href="https://www.datacenterdynamics.com/en/news/aws-experiences-power-issues-at-northern-virginia-cloud-region/">datacenterdynamics.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Coinbase disruption tied to AWS outage draws criticism amid staff layoffs and Q1 losses</div>
+        <div class="source-meta"><span class="tag">SB</span> CoinDesk &middot; Olivier Acuna &middot; May 8, 2026</div>
+        <div class="source-quote">"Coinbase systems are designed to be resilient to a single zone outage. In this case, we observed failures impacting multiple AWS zones, which caused an extended outage of core trading services."</div>
+        <a class="source-link" href="https://www.coindesk.com/business/2026/05/08/coinbase-disruption-tied-to-aws-outage-draws-criticism-amid-staff-layoffs-and-q1-losses">coindesk.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">AWS outage impacts data centers, FanDuel and Coinbase</div>
+        <div class="source-meta"><span class="tag">SC</span> CNBC &middot; May 8, 2026</div>
+        <a class="source-link" href="https://www.cnbc.com/2026/05/08/aws-outage-data-center-fanduel-coinbase.html">cnbc.com</a>
+      </div>
+    </div>
+
+    <div class="source-group">
+      <h3>Company &amp; Regulatory Disclosures</h3>
+
+      <div class="source-item">
+        <div class="source-title">AWS Health Dashboard &mdash; real-time incident record</div>
+        <div class="source-meta"><span class="tag">S5</span><span class="tag gray">S9</span> AWS &middot; May 7&ndash;8, 2026</div>
+        <div class="source-quote">"We have experienced an increase in temperatures within a single data center, which in some cases has caused impairments for instances in the Availability Zone."</div>
+        <a class="source-link" href="https://health.aws.amazon.com/health/status">health.aws.amazon.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">A postmortem of our May 7, 2026 outage</div>
+        <div class="source-meta"><span class="tag">S6</span> Coinbase Engineering &middot; May 2026</div>
+        <div class="source-quote">"The duration of the outage is unacceptable to us and we owe our customers, our partners, and the broader engineering community a detailed explanation."</div>
+        <a class="source-link" href="https://www.coinbase.com/blog/a-postmortem-of-our-may-7-2026-outage">coinbase.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Amazon Form 10-Q &mdash; Item 1A Risk Factors: System Interruption and Lack of Redundancy</div>
+        <div class="source-meta"><span class="tag">S7</span> Amazon.com, Inc. filed with the SEC &middot; Q1 2026</div>
+        <div class="source-quote">"Our systems are not fully redundant and our disaster recovery planning may not be sufficient... natural or human-caused disasters, extreme weather, operational failures (including from energy shortages)."</div>
+        <a class="source-link" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=AMZN&type=10-Q">sec.gov (AMZN 10-Q filings)</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Coinbase status page &mdash; May 7&ndash;8, 2026</div>
+        <div class="source-meta"><span class="tag">S8</span><span class="tag data">TIMELINE</span> Coinbase &middot; May 7&ndash;8, 2026</div>
+        <a class="source-link" href="https://status.coinbase.com/">status.coinbase.com</a>
+      </div>
+    </div>
+
+    <div class="source-group">
+      <h3>Technical &amp; Industry Analysis</h3>
+
+      <div class="source-item">
+        <div class="source-title">AWS Outage May 2026: Cross-Region Disaster Recovery Lessons</div>
+        <div class="source-meta"><span class="tag">S10</span> SingleStore Engineering &middot; Mohan Manthena &middot; May 14, 2026</div>
+        <div class="source-quote">"The cloud SLA is not your business continuity plan. It is a small refund."</div>
+        <a class="source-link" href="https://www.singlestore.com/blog/aws-outage-may-2026-cross-region-disaster-recovery/">singlestore.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Last Week in AWS newsletter &mdash; regional lock-in commentary</div>
+        <div class="source-meta"><span class="tag">S11</span> Corey Quinn &middot; May 2026</div>
+        <div class="source-quote">"The October us-east-1 outage took a disturbing length of time to identify DynamoDB as the culprit and communicate that to customers." (Corey Quinn, January 2026)</div>
+        <a class="source-link" href="https://www.lastweekinaws.com/newsletter/">lastweekinaws.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Internet Report: AWS Outage &mdash; dependency chain visualization</div>
+        <div class="source-meta"><span class="tag">S12</span> ThousandEyes (Cisco) &middot; May 2026</div>
+        <a class="source-link" href="https://www.thousandeyes.com/blog/internet-report-aws-outage">thousandeyes.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Annual Outage Analysis 2026 &mdash; cooling ranks as second-largest cause of major outages</div>
+        <div class="source-meta"><span class="tag">S13</span><span class="tag data">DATA</span> Uptime Institute &middot; May 5, 2026</div>
+        <div class="source-quote">"Soaring demand for AI is straining existing infrastructure designs &mdash; especially around power and cooling."</div>
+        <a class="source-link" href="https://intelligence.uptimeinstitute.com/resource/annual-outage-analysis-2026">uptimeinstitute.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">10 Years Of Compartmentalization at AWS &mdash; the AZ isolation promise</div>
+        <div class="source-meta"><span class="tag">S14</span> Werner Vogels (AWS CTO) &middot; March 26, 2018</div>
+        <div class="source-quote">"If there is an error in the software, the risk of that error affecting other zones is minimized."</div>
+        <a class="source-link" href="https://www.allthingsdistributed.com/2018/03/ten-years-of-aws-compartimentalization.html">allthingsdistributed.com</a>
+      </div>
+    </div>
+
+    <div class="source-group">
+      <h3>Public Infrastructure Records</h3>
+
+      <div class="source-item">
+        <div class="source-title">Loudoun County Data Center Standards &amp; Locations</div>
+        <div class="source-meta"><span class="tag">S15</span><span class="tag data">PUBLIC RECORD</span> Loudoun County Dept. of Planning &amp; Zoning</div>
+        <div class="source-quote">"Northern Virginia, with Loudoun at its heart, has nearly 5,000 megawatts of data-center capacity &mdash; more than twice as much as Beijing, the closest competitor."</div>
+        <a class="source-link" href="https://www.loudoun.gov/5990/Data-Center-Standards-Locations">loudoun.gov</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">New state law mandates review of Dominion's load forecasting as data centers raise concerns</div>
+        <div class="source-meta"><span class="tag">S16</span><span class="tag data">DATA</span> Virginia Mercury &middot; April 30, 2026</div>
+        <div class="source-quote">"Data centers that have filed requests with Dominion are asking for nearly three times the utility's all-time peak load, or 70,000 megawatts per day."</div>
+        <a class="source-link" href="https://virginiamercury.com/2026/04/30/new-state-law-mandates-review-of-dominions-load-forecasting-as-data-centers-raise-concerns/">virginiamercury.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Dominion Energy Biennial Review &mdash; SCC ruling on data center load</div>
+        <div class="source-meta"><span class="tag">S16</span> Virginia State Corporation Commission &middot; 2025&ndash;2026</div>
+        <a class="source-link" href="https://www.scc.virginia.gov/about-the-scc/newsreleases/release/scc-issues-order-on-dev-biennial-review-2025/scc-rules-in-dev-biennial-review-case.html">scc.virginia.gov</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">FCC National Broadband Map &mdash; Ashburn corridor fiber concentration</div>
+        <div class="source-meta"><span class="tag">S17</span><span class="tag data">PUBLIC RECORD</span> FCC / NTIA</div>
+        <a class="source-link" href="https://broadbandmap.fcc.gov/">broadbandmap.fcc.gov</a>
+      </div>
+    </div>
+
+    <div class="source-group">
+      <h3>Community Reception &amp; Real-Time Reactions</h3>
+
+      <div class="source-item">
+        <div class="source-title">AWS EC2 outage in use1-az4 (us-east-1)</div>
+        <div class="source-meta"><span class="tag">S18</span> Hacker News discussion &middot; May 8, 2026</div>
+        <a class="source-link" href="https://news.ycombinator.com/item?id=48057294">news.ycombinator.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">AWS North Virginia data center outage &ndash; resolved</div>
+        <div class="source-meta"><span class="tag">S18</span> Hacker News discussion &middot; May 13, 2026</div>
+        <a class="source-link" href="https://news.ycombinator.com/item?id=48058197">news.ycombinator.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Ask HN: How did yesterday's AWS us-east-1 outage affect your org?</div>
+        <div class="source-meta"><span class="tag">S18</span> Hacker News discussion</div>
+        <a class="source-link" href="https://news.ycombinator.com/item?id=45661033">news.ycombinator.com</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">r/aws &mdash; us-east-1 outage May 2026 threads</div>
+        <div class="source-meta"><span class="tag">S20</span> Reddit</div>
+        <a class="source-link" href="https://www.reddit.com/r/aws/">reddit.com/r/aws</a>
+      </div>
+    </div>
+
+    <div class="source-group">
+      <h3>Historical Precedent</h3>
+
+      <div class="source-item">
+        <div class="source-title">Summary of the Amazon S3 Service Disruption in the Northern Virginia (US-EAST-1) Region</div>
+        <div class="source-meta"><span class="tag">S21</span> AWS &middot; March 2, 2017</div>
+        <div class="source-quote">"An authorized S3 team member using an established playbook executed a command which was intended to remove a small number of servers for one of the S3 subsystems... Unfortunately, one of the inputs to the command was entered incorrectly and a larger set of servers was removed than intended."</div>
+        <a class="source-link" href="https://aws.amazon.com/message/41926/">aws.amazon.com/message/41926/</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">Summary of the AWS Service Event in the Northern Virginia (US-EAST-1) Region</div>
+        <div class="source-meta"><span class="tag">S22</span> AWS &middot; December 10, 2021</div>
+        <div class="source-quote">"An automated activity to scale capacity of one of the AWS services hosted in the main AWS network triggered an unexpected behavior from a large number of clients inside the internal network."</div>
+        <a class="source-link" href="https://aws.amazon.com/message/12721/">aws.amazon.com/message/12721/</a>
+      </div>
+
+      <div class="source-item">
+        <div class="source-title">More details about the October 4 outage</div>
+        <div class="source-meta"><span class="tag">S23</span> Meta Engineering &middot; Santosh Janardhan &middot; October 5, 2021</div>
+        <div class="source-quote">"The entire backbone was removed from operation, making these locations declare themselves unhealthy and withdraw those BGP advertisements. The end result was that our DNS servers became unreachable even though they were still operational."</div>
+        <a class="source-link" href="https://engineering.fb.com/2021/10/05/networking-traffic/outage-details/">engineering.fb.com</a>
+      </div>
+    </div>
+
+    <div class="source-group">
+      <h3>Blast Radius &amp; Independent Monitoring</h3>
+
+      <div class="source-item">
+        <div class="source-title">May 7, 2026 AWS Outage Impact &mdash; 748 services degraded across 7 hours</div>
+        <div class="source-meta"><span class="tag">SA</span><span class="tag data">DATA</span> StatusGator &middot; Colin Bartlett &middot; May 8, 2026</div>
+        <div class="source-quote">"StatusGator captured 2,370 status changes across 748 services between 12:00 AM and 7:00 AM on May 8, 2026. More than 150 different cloud services were affected."</div>
+        <a class="source-link" href="https://statusgator.com/blog/may-7-2026-aws-outage-impact/">statusgator.com</a>
+      </div>
+    </div>
+
+    <div class="source-group" id="attributions" style="margin-top: 60px;">
+      <h3>Media Attributions</h3>
+      <div class="source-item">
+        <div class="source-title">Music</div>
+        <div class="source-meta"><span class="tag gray">audio</span> YouTube Audio Library (royalty-free, no attribution required) and Jimena Contreras (marimba beds). Per-scene track list: cold-open ambient, documentary strings (stakes), sustained pads (history), clean synth (mechanism), tension pulse (incident), colder minor (blast radius), sparse verdict theme (verdict), returning ambient (tag).</div>
+      </div>
+      <div class="source-item">
+        <div class="source-title">Sound effects</div>
+        <div class="source-meta"><span class="tag gray">audio</span> Freesound.org (CC0 and CC-BY) and Pixabay (Content License, no attribution required). Used for room tone, marker circle scribbles, page turns, soft whooshes, and thermal-alert stings. No AI-generated audio.</div>
+      </div>
+      <div class="source-item">
+        <div class="source-title">Stock footage</div>
+        <div class="source-meta"><span class="tag gray">video</span> Pexels (Pexels License, free commercial use, no attribution required). Ashburn aerials and datacenter B-roll where noted.</div>
+      </div>
+      <div class="source-item">
+        <div class="source-title">Photography</div>
+        <div class="source-meta"><span class="tag gray">image</span> Publicly available press photos of named individuals (Corey Quinn, Werner Vogels, Simon Sharwood, Gyana Swain, Emma Woollacott, Santosh Janardhan) used under fair use for editorial commentary. All linked to their original publication sources above.</div>
+      </div>
+      <div class="source-item">
+        <div class="source-title">3D assets and rendering</div>
+        <div class="source-meta"><span class="tag gray">3d</span> Custom Three.js scenes (datacenter halls, CRAC fans, cooling loop, incident timeline, quorum voting, message pipe, Ashburn precedents). PBR textures from Poly Haven (CC0). Photorealistic aerial via Google Photorealistic 3D Tiles API (Google Terms of Service).</div>
+      </div>
+      <div class="source-item">
+        <div class="source-title">Screenshots and screen captures</div>
+        <div class="source-meta"><span class="tag gray">image</span> Screenshots of postmortems, news articles, and dashboards used under fair use for reporting and commentary. Each on-screen source is captioned with its outlet and linked in the Sources section above.</div>
+      </div>
+      <div class="source-item">
+        <div class="source-title">Fonts</div>
+        <div class="source-meta"><span class="tag gray">type</span> Playfair Display, Source Serif 4, JetBrains Mono, Inter (all SIL Open Font License via Google Fonts).</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p><a href="https://www.youtube.com/@Xamined">Xamined</a> &mdash; examining why big things fail</p>
+    <p style="margin-top:8px;">Sources verified as of July 2026. <a href="/">Back to all episodes</a></p>
+  </div>
+
+</div>
+</body>
+</html>
